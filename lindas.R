@@ -8,7 +8,7 @@ query <- "
 SELECT * WHERE {
     ?s ?p ?o.
 }
-LIMIT 5
+LIMIT 2
 "
 
 # Make the query
@@ -18,6 +18,16 @@ response <- POST("https://lindas.admin.ch/query",
 
 
 # Read the respnose (it's XML)
-result = content(response, "text")
+result = content(response, "text", encoding = "UTF-8")
 
-xmlToList(result)
+# Funtion to retrieve the name from an URI
+getName <- function(URI){
+  URI <- paste0(URI, "?format=jsonld")
+  URI |> httr::GET() |>
+    content(type = "text", encoding = "UTF-8") |>
+    jsonlite::fromJSON() -> x
+  x[["@graph"]][["@graph"]][[1]][["http://schema.org/name"]] |> unname() |> unlist()
+}
+
+# Try to run the function
+getName("https://lod.opentransportdata.swiss/didok/8505592")
