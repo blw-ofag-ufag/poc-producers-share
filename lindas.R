@@ -17,8 +17,10 @@ response <- POST("https://lindas.admin.ch/query",
                  encode = "form")
 
 
-# Read the respnose (it's XML)
-result = content(response, "text", encoding = "UTF-8")
+# Read and parse the respnose (it's XML)
+result <- response |>
+  content(as = "text", encoding = "UTF-8") |>
+  xmlParse()
 
 # Funtion to retrieve the name from an URI
 getName <- function(URI){
