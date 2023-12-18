@@ -4,12 +4,7 @@ library(jsonlite)
 library(XML)
 
 # Define the SPARQL query
-query <- "
-SELECT * WHERE {
-    ?s ?p ?o.
-}
-LIMIT 2
-"
+query <- "query.txt" |> readLines() |> paste(collapse = "\n")
 
 # Make the query
 response <- POST("https://lindas.admin.ch/query",
