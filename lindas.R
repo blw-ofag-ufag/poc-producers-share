@@ -1,3 +1,5 @@
+
+
 # attach libraries to search path
 library(httr)
 library(jsonlite)
@@ -7,7 +9,15 @@ library(XML)
 source("sparql.R")
 
 # define the SPARQL query
-data = sparql("producer-prices.txt")
+data = sparql("query-producer-prices.rq")
 
-# visualize the results
-plot(measure  ~ year, data, ylab = "Price [CHF]", xlab = "Year", type = "o")
+head(data)
+
+# create a new variabel of `Date` type
+data$date <- as.Date(paste(data$year, data$month, "1", sep = "-"))
+
+# sort data by `date`
+data <- data[order(data$date),]
+
+
+plot(measure  ~ date, data, ylab = "Price [CHF]", xlab = "Year", type = "o", pch = 16, cex = 0.8, lwd = 2); grid(col = 1)

@@ -12,20 +12,20 @@ WHERE {
   GRAPH <https://lindas.admin.ch/foag/agricultural-market-data> {
     
     VALUES(?lang) { ("de") } 
-    FILTER (?product in ( <https://agriculture.ld.admin.ch/foag/product/142> ) )
-FILTER (?valueChainDetail in ( <https://agriculture.ld.admin.ch/foag/value-chain-detail/1>,<https://agriculture.ld.admin.ch/foag/value-chain-detail/2> ) )
-FILTER (?costComponent in ( <https://agriculture.ld.admin.ch/foag/cost-component/0>,<https://agriculture.ld.admin.ch/foag/cost-component/1>,<https://agriculture.ld.admin.ch/foag/cost-component/2> ) )
-FILTER (?currency in ( <https://agriculture.ld.admin.ch/foag/currency/1> ) )
+    FILTER (?product in ( <https://agriculture.ld.admin.ch/foag/product/138> ) )
+FILTER (?valueChainDetail in ( <https://agriculture.ld.admin.ch/foag/value-chain-detail/18> ) )
+FILTER (?costComponent in ( <https://agriculture.ld.admin.ch/foag/cost-component/1> ) )
+FILTER (?currency in ( <https://agriculture.ld.admin.ch/foag/currency/CHF> ) )
 FILTER (?foreignTrade in ( <https://agriculture.ld.admin.ch/foag/foreign-trade/0> ) )
-FILTER (?dataSource in ( <https://agriculture.ld.admin.ch/foag/data-source/1>,<https://agriculture.ld.admin.ch/foag/data-source/14>,<https://agriculture.ld.admin.ch/foag/data-source/15>,<https://agriculture.ld.admin.ch/foag/data-source/35>,<https://agriculture.ld.admin.ch/foag/data-source/36>,<https://agriculture.ld.admin.ch/foag/data-source/43>,<https://agriculture.ld.admin.ch/foag/data-source/62>,<https://agriculture.ld.admin.ch/foag/data-source/7> ) )
-FILTER (?salesRegion in ( <https://agriculture.ld.admin.ch/foag/sales-region/0>,<https://agriculture.ld.admin.ch/foag/sales-region/1>,<https://agriculture.ld.admin.ch/foag/sales-region/11>,<https://agriculture.ld.admin.ch/foag/sales-region/14>,<https://agriculture.ld.admin.ch/foag/sales-region/15>,<https://agriculture.ld.admin.ch/foag/sales-region/3>,<https://agriculture.ld.admin.ch/foag/sales-region/4>,<https://agriculture.ld.admin.ch/foag/sales-region/5>,<https://agriculture.ld.admin.ch/foag/sales-region/6> ) )
-FILTER (?usage in ( <https://agriculture.ld.admin.ch/foag/usage/0>,<https://agriculture.ld.admin.ch/foag/usage/5>,<https://agriculture.ld.admin.ch/foag/usage/6>,<https://agriculture.ld.admin.ch/foag/usage/9> ) )
-FILTER (?productOrigin in ( <https://agriculture.ld.admin.ch/foag/product-origin/1> ) )
+FILTER (?dataSource in ( <https://agriculture.ld.admin.ch/foag/data-source/1> ) )
+FILTER (?salesRegion in ( <https://agriculture.ld.admin.ch/foag/sales-region/0> ) )
+FILTER (?usage in ( <https://agriculture.ld.admin.ch/foag/usage/0> ) )
+FILTER (?productOrigin in ( <https://agriculture.ld.admin.ch/foag/product-origin/0>,<https://agriculture.ld.admin.ch/foag/product-origin/1> ) )
 FILTER (?productProperties in ( <https://agriculture.ld.admin.ch/foag/product-properties/0> ) )
-FILTER (?productionSystem in ( <https://agriculture.ld.admin.ch/foag/production-system/3>,<https://agriculture.ld.admin.ch/foag/production-system/0>,<https://agriculture.ld.admin.ch/foag/production-system/1>,<https://agriculture.ld.admin.ch/foag/production-system/2> ) )
-FILTER (?dataMethod in ( <https://agriculture.ld.admin.ch/foag/data-method/3>,<https://agriculture.ld.admin.ch/foag/data-method/5> ) )
-FILTER (?unit in ( <https://agriculture.ld.admin.ch/foag/unit/1> ) )
-    <https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Production_Price_Year> cube:observationSet ?observationSet .
+FILTER (?productionSystem in ( <https://agriculture.ld.admin.ch/foag/production-system/3> ) )
+FILTER (?dataMethod in ( <https://agriculture.ld.admin.ch/foag/data-method/0> ) )
+FILTER (?unit in ( <https://agriculture.ld.admin.ch/foag/unit/7>,<https://agriculture.ld.admin.ch/foag/unit/1> ) )
+    <https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Consumption_Price_Year> cube:observationSet ?observationSet .
     ?observationSet cube:observation ?observation .
             ?observation <https://agriculture.ld.admin.ch/foag/dimension/cost-component> ?costComponent .
           optional { 
@@ -121,5 +121,7 @@ FILTER (?unit in ( <https://agriculture.ld.admin.ch/foag/unit/1> ) )
     ?observation <https://agriculture.ld.admin.ch/foag/measure/price> ?measure .
   }
 
+  ?date time:year ?year.
+  OPTIONAL { ?date time:month ?month. }
+  
 } ORDER BY ?year ?month
-
