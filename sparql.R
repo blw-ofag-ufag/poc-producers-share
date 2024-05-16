@@ -11,6 +11,12 @@ sparql <- function(path = NULL) {
                    body = list(query = query),
                    encode = "form")
   
+  # return warning if query failed
+  if(response$status_code >= 300) {
+    warning("Query failed")
+    return(NULL)
+  }
+  
   # read and parse the respnose (it's XML)
   result <- response |> content(encoding = "UTF-8")
   
