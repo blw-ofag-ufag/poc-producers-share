@@ -47,5 +47,3 @@ dev.off()
 # Write data as machine-readable table
 write.csv(data[c("date","producerShare","producerShareSmoothed")], "data/producers-share.csv", row.names = FALSE)
 
-
-
