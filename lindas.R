@@ -21,15 +21,15 @@ data <- data[order(data$date),]
 # compute the producer's share
 data$producerShare <- 100 * data$producerPrice / data$consumerPrice
 
-# compute smoothed versions of all shares
-data |>
-  subset(select = c("consumerPrice","producerPrice","producerShare")) |>
-  ts(start = 2001, frequency = 12) |>
-  decompose() |>
-  getElement("trend") |>
-  as.data.frame() -> trend
-names(trend) <- paste0(c("consumerPrice","producerPrice","producerShare"), "Smoothed")
-data <- cbind(data, trend)
+# compute smoothed versions of all shares (using Seasonal Decomposition of Time Series by Loess)
+for (i in c("consumerPrice","producerPrice","producerShare")) {
+  data[,paste0(i,"Smoothed")] <- data[,i] |>
+    ts(start = 2001, frequency = 12) |>
+    stl(s.window = 7) |>
+    getElement("time.series") |>
+    as.data.frame() |>
+    subset(select = "trend")
+}
 
 # Produce graphic showing the producer's share
 svg("graphics/producer-share.svg", width = 10, height = 6)
