@@ -45,4 +45,4 @@ lines(producerShareSmoothed ~ I(year+month/12), data, lwd = 2)
 dev.off()
 
 # Write data as machine-readable table
-write.csv(data, "data/producers-share.csv", row.names = FALSE)
+write.csv(data[c("date","producerShare","producerShareSmoothed")], "data/producers-share.csv", row.names = FALSE)
