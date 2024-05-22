@@ -44,6 +44,8 @@ lines(producerShare ~ I(year+month/12), data, lwd = 0.5)
 lines(producerShareSmoothed ~ I(year+month/12), data, lwd = 2)
 dev.off()
 
-# Write data as machine-readable table
-write.csv(data[c("date","producerShare","producerShareSmoothed")], "data/producers-share.csv", row.names = FALSE)
+# Write producer and consumer prices as machine-readable data
+write.csv(data[,c("date","producerPrice","consumerPrice","producerPriceSmoothed","consumerPriceSmoothed")], "data/prices.csv", row.names = FALSE)
 
+# Write data as machine-readable table
+write.csv(data[,c("date","producerShare","producerShareSmoothed")], "data/producers-share.csv", row.names = FALSE)
