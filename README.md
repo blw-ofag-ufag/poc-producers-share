@@ -1,3 +1,6 @@
+> [!NOTE]
+> This GitHub repository is used as a proof-of-concept and does not contain any official statistics from the federal office for agriculture.
+
 # LINDAS
 
 This repository contains a collection of scripts for querying LINDAS (linked data service).
