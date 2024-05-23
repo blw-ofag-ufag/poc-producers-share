@@ -14,7 +14,7 @@ For this proof-of-concept, the following pipeline is tested:
 ```mermaid
 graph LR
   A[(LINDAS)] --SPARQL--> B
-  subgraph GitHub
+  subgraph R script on GitHub
     B[Read\ndata]
     B -->  C[Compute\nStatistics] --> F[(Results)]
   end
