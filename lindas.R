@@ -25,7 +25,7 @@ data$producerShare <- 100 * data$producerPrice / data$consumerPrice
 for (i in c("consumerPrice","producerPrice","producerShare")) {
   data[,paste0(i,"Smoothed")] <- data[,i] |>
     ts(start = 2001, frequency = 12) |>
-    stl(s.window = 7) |>
+    stl(s.window = "periodic") |>
     getElement("time.series") |>
     as.data.frame() |>
     subset(select = "trend")
@@ -37,9 +37,9 @@ par(mar = c(4,4,1,1))
 plot(producerShareSmoothed ~ I(year+month/12),
      data, type = "l",
      las = 1, ylab = "Produzentenanteil [%]", xlab = "Zeit", yaxs = "i", xaxs = "i",
-     ylim = c(0,100), xlim = c(floor(min(data$year+data$month/12)),ceiling(max(data$year+data$month/12))))
+     ylim = c(35,65), xlim = c(floor(min(data$year+data$month/12)),ceiling(max(data$year+data$month/12))))
 abline(v = seq(2000,2050,5), h = seq(0,100,20), col = "grey")
-abline(v = seq(2000,2050,1), h = seq(0,100,4), col = "grey", lwd = 0.5)
+abline(v = seq(2000,2050,1), h = seq(0,100,1), col = "grey", lwd = 0.5)
 lines(producerShare ~ I(year+month/12), data, lwd = 0.5)
 lines(producerShareSmoothed ~ I(year+month/12), data, lwd = 2)
 dev.off()
