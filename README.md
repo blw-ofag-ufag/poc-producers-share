@@ -20,13 +20,7 @@ This project makes use of the following technologies and programming languages.
 
 # 📓 Process documentation
 
-For this proof-of-concept, the following pipeline is tested:
-
-- The federal office for agriculture FOAG uploads up-to-date market data into the linked data service LINDAS.
-- The R script `main.R` executes a SPARQL query (saved in `sparql-scripts/query.rq`) and receives the data from LINDAS.
-- The R script `main.R` calculates the producer's share of the comsumer's price and performs a seasonal decomposition. The results of this computation is saved in the `data` folder.
-- A separately set-up visualization task in [Datawrapper](https://www.datawrapper.de/) pulls its source data from the same URL, always: The `data/producers-share.csv` table. It generates an interactive chart that can be accessed [via another URL](https://datawrapper.dwcdn.net/hdlcx/5/).
-- The html-page `docs/index.html` embedds the Datawrapper-visualization using an iframe.
+This project involves two periodically executed processes: the GitHub Actions workflow (once a week) and the Datawrapper update (once an hour). Below is a detailed description of the process, with reference to the actual step numbers from the sequence diagram.
 
 ```mermaid
 sequenceDiagram
@@ -59,14 +53,25 @@ sequenceDiagram
     end
 ```
 
+1. **Set up environment:** GitHub Actions sets up the environment, installing R and the necessary packages `httr` as well as `readr`.
+2. **Trigger execution:** GitHub Actions triggers the execution of the R script (`main.R`).
+3. **Send SPARQL query:** The R script sends a SPARQL query to LINDAS via the API to retrieve the latest market data.
+4. **Return market data:** LINDAS processes the query and returns the up-to-date milk data to the R script.
+5. **Calculate producer's share:** The R script computes the producer's share of the consumer's price based on the returned data.
+6. **Decompose time series:** The R script performs a seasonal decomposition of the time series by LOESS (locally estimated scatterplot smoothing) using the `stl` function from the `stats` package.
+7. **Save results:** The processed results are written as two CSV files (`prices.csv` and `producers-share.csv`) to the `/results` directory.
+8. **Commit results:** GitHub Actions commits the results to the repository. If no changes are detected, no commits are made.
+9. **Fetch latest results:** Datawrapper periodically (every hour) fetches the latest results from a fixed URL in the GitHub repository.
+10. **Visualize results:** Datawrapper creates and updates an interactive graphic at a fixed URL, reflecting the latest processed data. A demo of the datawrapper visualizations can be seen [here](https://blw-ofag-ufag.github.io/poc-producers-share/). Note that the Datawrapper visualization is integrated in this webpage as an iframe.
+
 # 🖥️ The GitHub Actions workflow
 
-The following yaml code defines the GitHub workflow.
+The GitHub action is controlled by the yaml file `.github/workflow/compute-producers-share.yml`. The action is scheduled to run every Sunday at midnight UTC.
 
 ```yml
 on:
   schedule:
-    - cron: '0 0 * * 0' # This runs the action every Sunday at midnight UTC
+    - cron: '0 0 * * 0'
 jobs:
   compute-producers-share:
     runs-on: ubuntu-latest
