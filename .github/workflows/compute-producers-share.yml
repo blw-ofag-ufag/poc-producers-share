@@ -1,7 +1,6 @@
 on:
-  push:
-    branches: main
-
+  schedule:
+    - cron: '0 0 * * 0' # This runs the action every Sunday at midnight UTC
 jobs:
   compute-producers-share:
     runs-on: ubuntu-latest
