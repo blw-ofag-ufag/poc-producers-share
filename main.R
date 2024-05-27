@@ -2,10 +2,10 @@
 library(httr)
 
 # read external functions
-source("sparql.R")
+source("resources/sparql.R")
 
 # define the SPARQL query
-data = sparql("sparql-scrips/query.rq")
+data = sparql("resources/query.rq")
 
 # convert `producerPrice` unit
 data$producerPrice = data$producerPrice * 0.01
@@ -29,21 +29,12 @@ for (i in c("consumerPrice","producerPrice","producerShare")) {
     subset(select = "trend")
 }
 
-# Produce graphic showing the producer's share
-# svg("graphics/producer-share.svg", width = 10, height = 6)
-# par(mar = c(4,4,1,1))
-# plot(producerShareSmoothed ~ I(year+month/12),
-#      data, type = "l",
-#      las = 1, ylab = "Produzentenanteil [%]", xlab = "Zeit", yaxs = "i", xaxs = "i",
-#      ylim = c(35,65), xlim = c(floor(min(data$year+data$month/12)),ceiling(max(data$year+data$month/12))))
-# abline(v = seq(2000,2050,5), h = seq(0,100,20), col = "grey")
-# abline(v = seq(2000,2050,1), h = seq(0,100,1), col = "grey", lwd = 0.5)
-# lines(producerShare ~ I(year+month/12), data, lwd = 0.5)
-# lines(producerShareSmoothed ~ I(year+month/12), data, lwd = 2)
-# dev.off()
+# write producer and consumer prices as machine-readable data
+write.csv(x = data[,c("date","producerPrice","consumerPrice","producerPriceSmoothed","consumerPriceSmoothed")],
+          file = "results/prices.csv",
+          row.names = FALSE)
 
-# Write producer and consumer prices as machine-readable data
-write.csv(data[,c("date","producerPrice","consumerPrice","producerPriceSmoothed","consumerPriceSmoothed")], "data/prices.csv", row.names = FALSE)
-
-# Write data as machine-readable table
-write.csv(data[,c("date","producerShare","producerShareSmoothed")], "data/producers-share.csv", row.names = FALSE)
+# write producer's share as machine-readable data
+write.csv(x = data[,c("date","producerShare","producerShareSmoothed")],
+          file = "results/producers-share.csv",
+          row.names = FALSE)
