@@ -18,7 +18,7 @@ This project makes use of the following technologies and programming languages.
 - **GitHub Actions:** Automates the execution of the R script.
 - **Datawrapper:** Creates and displays interactive visualizations.
 
-# Process documentation
+# 📓 Process documentation
 
 For this proof-of-concept, the following pipeline is tested:
 
@@ -29,21 +29,47 @@ For this proof-of-concept, the following pipeline is tested:
 - The html-page `docs/index.html` embedds the Datawrapper-visualization using an iframe.
 
 ```mermaid
-graph LR
-  A[(LINDAS)] --SPARQL--> B
-  subgraph R script on GitHub
-    B[Read\ndata]
-    B -->  C[Compute\nStatistics] --> F[(Results)]
-  end
-  subgraph Datawrapper
-    F --get data\nvia raw url--> G[Generate\nInteractive\nVisualization]
-  end
-  G --iframe--> H[Other\nSites]
+sequenceDiagram
+    participant LINDAS
+    participant GitHub
+    participant Datawrapper
+
+    GitHub->>LINDAS: Send SPARQL query
+    LINDAS-->>GitHub: Return market data
+    GitHub->>GitHub: Execute R script and process data
+    GitHub->>GitHub: Save processed data in repository
+    Datawrapper->>GitHub: Fetch latest processed data
+    Datawrapper->>Datawrapper: Generate visualizations
 ```
 
 # 🖥️ The GitHub Actions workflow
 
 
 ```yml
-
+on:
+  schedule:
+    - cron: '0 0 * * 0' # This runs the action every Sunday at midnight UTC
+jobs:
+  compute-producers-share:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Up R
+        uses: r-lib/actions/setup-r@v2
+      - name: Install packages
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::httr
+            any::readr
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Compute producer's share
+        run: Rscript -e 'source("main.R")'
+      - name: Commit results
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add .
+          git commit -m 'Data updated' || echo "No changes to commit"
+          git push origin || echo "No changes to commit"
 ```
