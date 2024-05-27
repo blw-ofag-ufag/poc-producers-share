@@ -21,6 +21,12 @@ Curabitur fermentum lorem vel augue finibus, quis sodales nisi gravida. Mauris e
 
 ```
 
+Der Produzentenanteil am Konsumentenfranken $R(t)$ für Milch wird wie folgt berechnet.
+$$
+R(t) = 100\% \frac{P_p(t)}{P_c(t)}
+$$
+wobei $P_p(t)$ der Produzentenpreis zum Zeitpunkt $t$ ist und $P_c(t)$ der Konsumentenpreis zum Zeitpunkt $t$. Dieser *rohe* Produzentenanteil wurde mithilfe einer saisonalen Zerlegung von Zeitreihen mit Loess (Locally Estimated Scatterplot Smoothing) in Trend, saisonale Effekte und kurzzeitige Fluktuationen zerlegt. Diese Methode ist in der R Funktion `stl` implementiert.
+
 Phasellus imperdiet fermentum eros. Nam id lacinia nisi. Fusce elementum neque sed maximus accumsan. Curabitur vitae ipsum id justo mattis elementum. Vestibulum dapibus congue justo, et elementum metus posuere sit amet. Duis interdum ex semper neque rhoncus vestibulum. Nulla facilisi. Nulla eu urna vel sem egestas volutpat. Suspendisse arcu nibh, hendrerit vitae felis et, commodo pharetra leo. Nullam sapien neque, pellentesque sit amet magna sit amet, aliquam efficitur metus. Ut semper scelerisque eros, eget gravida urna laoreet nec. Aenean aliquet dapibus massa sit amet pretium. Mauris tristique diam sollicitudin elementum sollicitudin. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
 
 Aliquam cursus neque eu turpis porttitor, non porta neque tincidunt. Praesent hendrerit ex rhoncus nulla pretium dapibus. Vestibulum vel varius felis. Sed a lobortis turpis. Vivamus fermentum neque euismod magna suscipit, id posuere ante auctor. Mauris ac diam ante. Mauris ac justo ut metus suscipit efficitur at tempus libero.
