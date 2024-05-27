@@ -1,6 +1,23 @@
 > [!NOTE]
 > This GitHub repository is used as a proof-of-concept and does not contain any official statistics from the federal office for agriculture.
 
+# 🎯 Goal of this project
+
+The goal of this project is to develop and test a proof-of-concept (POC) data pipeline that involves the following steps:
+
+1. **Data querying:** An R script, executed via GitHub Actions, queries the data from LINDAS using SPARQL. The Federal Office for Agriculture (FOAG) already uploads current market data to the [Linked Data Service](https://lindas.admin.ch/) (LINDAS).
+2. **Computation:** The script calculates the producer's share of the consumer's price and performs a seasonal decomposition. The results are stored on this public GitHub repository.
+3. **Visualization:** The results are visualized using [Datawrapper](https://www.datawrapper.de/), which generates an interactive chart embedded in an [HTML page](https://blw-ofag-ufag.github.io/poc-producers-share/).
+
+# 🤖 The tech stack
+
+This project makes use of the following technologies and programming languages.
+
+- **SPARQL:** A query language and protocol for Linked Open Data on the web, for example LINDAS, a linked data service for publishing data as knowledge graphs.
+- **R:** Handles data querying and computation.
+- **GitHub Actions:** Automates the execution of the R script.
+- **Datawrapper:** Creates and displays interactive visualizations.
+
 # Process documentation
 
 For this proof-of-concept, the following pipeline is tested:
@@ -24,12 +41,9 @@ graph LR
   G --iframe--> H[Other\nSites]
 ```
 
-# What is LINDAS and linked data?
+# 🖥️ The GitHub Actions workflow
 
-This repository contains a collection of scripts for querying LINDAS (linked data service).
 
-With LINDAS (Linked Data Service), public administrations can publish their data in the form of Knowledge Graphs and make them accessible via <https://lindas.admin.ch>. Data users can then access these data through a variety of means. LINDAS is operated by the Swiss Federal Archives and includes various elements of the data lifecycle.
+```yml
 
-![](resources/lindas.png)
-
-Linked Data is a technology that allows data to be easily interrelated in a universal form - hence the name *Linked Data*. These can be data from a variety of subject areas and origins.
+```
