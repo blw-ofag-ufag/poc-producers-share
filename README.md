@@ -30,16 +30,33 @@ For this proof-of-concept, the following pipeline is tested:
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant LINDAS
+    participant R Script
     participant GitHub
     participant Datawrapper
-
-    GitHub->>LINDAS: Send SPARQL query
-    LINDAS-->>GitHub: Return market data
-    GitHub->>GitHub: Execute R script and process data
-    GitHub->>GitHub: Save processed data in repository
-    Datawrapper->>GitHub: Fetch latest processed data
-    Datawrapper->>Datawrapper: Generate visualizations
+    loop Every week
+        activate GitHub
+        GitHub->>GitHub: Set up environment
+        GitHub->>R Script: Trigger execution
+        activate R Script
+        R Script->>LINDAS: Send SPARQL query
+        activate LINDAS
+        LINDAS-->>R Script: Return milk data
+        deactivate LINDAS
+        R Script->>R Script: Calculate producer's share
+        R Script->>R Script: Decompose time series
+        R Script->>GitHub: Save results
+        deactivate R Script
+        GitHub->>GitHub: Commit results
+        deactivate GitHub
+    end
+    loop Every hour
+        activate Datawrapper
+        Datawrapper->>GitHub: Fetch latest results
+        Datawrapper->>Datawrapper: Visualize results
+        deactivate Datawrapper
+    end
 ```
 
 # 🖥️ The GitHub Actions workflow
