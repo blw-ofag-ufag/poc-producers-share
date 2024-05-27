@@ -44,6 +44,7 @@ sequenceDiagram
 
 # 🖥️ The GitHub Actions workflow
 
+The following yaml code defines the GitHub workflow.
 
 ```yml
 on:
