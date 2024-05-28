@@ -98,3 +98,11 @@ jobs:
           git commit -m 'Data updated' || echo "No changes to commit"
           git push origin || echo "No changes to commit"
 ```
+
+# 📈 Creating a chart with Datawrapper
+
+Using Datawrapper is quite straightforward. The service can be used for free via a GitHub account.
+
+<img src="https://raw.githubusercontent.com/blw-ofag-ufag/poc-producers-share/main/resources/datawrapper-tutorial.gif" width="100%" height="100%">
+
+First, the URL from which the data will be fetched is set. Then, the graphic is customized to meet visualization needs.
