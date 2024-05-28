@@ -13,10 +13,10 @@ The goal of this project is to develop and test a proof-of-concept (POC) data pi
 
 This project makes use of the following technologies and programming languages.
 
-- **SPARQL:** A query language and protocol for Linked Open Data on the web, for example LINDAS, a linked data service for publishing data as knowledge graphs.
-- **R:** Handles data querying and computation.
-- **GitHub Actions:** Automates the execution of the R script.
-- **Datawrapper:** Creates and displays interactive visualizations.
+- **LINDAS:** A linked data service for publishing data as knowledge graphs. It can be queries by SPARQL, a query language and protocol for linked open data on the web.
+- **R:** A language for statistical computing.
+- **GitHub Actions:** A CI/CD platform that allows to automate code execution.
+- **Datawrapper:** A no-code tool to create and displays interactive visualizations.
 
 # 📓 Process documentation
 
