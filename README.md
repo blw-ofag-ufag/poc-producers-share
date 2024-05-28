@@ -1,7 +1,11 @@
 [![.github/workflows/compute-producers-share.yml](https://github.com/blw-ofag-ufag/poc-producers-share/actions/workflows/compute-producers-share.yml/badge.svg)](https://github.com/blw-ofag-ufag/poc-producers-share/actions/workflows/compute-producers-share.yml)
 
+# 🐄 *Proof-of-concept* producer's share of the consumer's price
+
+Effortlessly automate data processing and visualization with this cutting-edge proof-of-concept pipeline.
+
 > [!NOTE]
-> This GitHub repository is used as a proof-of-concept and does not contain any official statistics from the federal office for agriculture.
+> This GitHub repository is used as a proof-of-concept and does not aim to produce any official statistics for the federal office for agriculture.
 
 # 🎯 Goal of this project
 
