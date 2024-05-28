@@ -23,7 +23,6 @@ This project makes use of the following technologies and programming languages.
 This project involves two periodically executed processes: the GitHub Actions workflow (once a week) and the Datawrapper update (once an hour). Below is a detailed description of the process, with reference to the actual step numbers from the sequence diagram.
 
 ```mermaid
-%%{init: {'theme':'neutral'}}%%
 sequenceDiagram
     autonumber
     participant LINDAS
