@@ -8,7 +8,7 @@ format:
     html:
         theme:
             light: default
-            dark: darkly
+            #dark: darkly
 ---
 
 :::{.callout-note}
