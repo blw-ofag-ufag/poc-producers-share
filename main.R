@@ -7,6 +7,12 @@ source("resources/sparql.R")
 # define the SPARQL query
 data = sparql("resources/query.rq")
 
+# subset the data after 2010
+data = subset(data, subset = year >= 2010)
+
+# convert units for the producer price from 0.01 CHF/kg to 0.01 CHF/L
+data$producerPrice <- data$producerPrice * 1.03
+
 # convert `producerPrice` unit
 data$producerPrice = data$producerPrice * 0.01
 
@@ -28,9 +34,6 @@ for (i in c("consumerPrice","producerPrice","producerShare")) {
     as.data.frame() |>
     subset(select = "trend")
 }
-
-# subset the data after 2010
-data = subset(data, subset = year >= 2010)
 
 # write producer and consumer prices as machine-readable data
 write.csv(x = data[,c("date","producerPrice","consumerPrice","producerPriceSmoothed","consumerPriceSmoothed")],
