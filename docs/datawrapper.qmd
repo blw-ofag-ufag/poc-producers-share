@@ -1,3 +1,34 @@
+---
+title: Testseite für die Einbettung einer Datawrapper-Grafik
+author: Damian Oswald
+date: 2024-05-22
+lang: de
+---
+
+:::{.callout-note}
+Diese Webseite dient als Proof-of-Concept und zielt nicht darauf ab, eine offizielle Statistik für das Bundesamt für Landwirtschaft zu erstellen.
+:::
+
+Die aktuellen Milchpreise werden regelmässig vom Bundesamt für Landwirtschaft auf LINDAS hochgeladen. Mithilfe eines SPARQL-Queries werden diese Daten abgefragt, um aktuelle Marktinformationen zu erhalten. Diese Daten dienen der Berechnung des Produzentenanteils am Konsumentenpreis und werden anschliessend in einer interaktiven Grafik visualisiert. Diese Grafiken sind in diese Test-Webseite eingebettet.[^1]
+
+[^1]: Die interaktiven Grafiken werden in die Testseite als *iframe* eingebettet, um die Ergebnisse anschaulich darzustellen. Dies ermöglicht eine dynamische Präsentation der aktuellen Daten, welche sich in allen möglichen Websites einbetten lässt.
+
+```{=html}
+<div style="min-height:581px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/BxLYR/embed.js?v=6" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/BxLYR/full.png" alt="" /></noscript></div></script>
+```
+
+<hr style="visibility:hidden;" />
+
+Der Produzentenanteil am Konsumentenfranken beschreibt den Anteil des Verkaufspreises eines Produkts -- hier von konventioneller Molkereimilch -- der direkt an den Produzenten oder Landwirt geht.
+
+```{=html}
+<div style="min-height:554px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/hdlcx/embed.js?v=13" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/hdlcx/full.png" alt="" /></noscript></div></script>
+```
+
+<hr style="visibility:hidden;" />
+
+Der *rohe* Produzentenanteil wurde mithilfe einer saisonalen Zerlegung von Zeitreihen mit Loess (Locally Estimated Scatterplot Smoothing) in Trend, saisonale Effekte und kurzzeitige Fluktuationen zerlegt. Diese Methode ist in der R Funktion `stl` implementiert.
+
 # Was kann Datawrapper sonst?
 
 Datawrapper kann einiges mehr als nur Zeitreihen als Linien zeichnen. Das folgende Beispiel ist aus einem [Datensatz des Bundesamtes für Statistik BFS](https://www.atlas.bfs.admin.ch/maps/13/de/17965_5882_5872_4801/27738.html) generiert.

@@ -8,7 +8,7 @@
 
 <meta name="author" content="Damian Oswald">
 
-<title>Testseite für die Einbettung einer Datawrapper-Grafik</title>
+<title>Berechnung des Produzentenanteils am Konsumentenfranken</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -43,12 +43,12 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Testseite für die Einbettung einer Datawrapper-Grafik</h1>
-<p class="subtitle lead">Beispiel Produzentenanteil am Konsumentenfranken bei UHT-Milch</p>
+<h1 class="title"><p>Berechnung des Produzentenanteils am Konsumentenfranken</p></h1>
+<p class="subtitle lead"></p><p>Pilotprojekt am Beispiel der konventionellen Molkerei- und UHT-Milch</p><p></p>
 </div>
 
 
@@ -85,7 +85,7 @@ Hinweis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Diese Webseite dient als Proof-of-Concept und zielt nicht darauf ab, eine offizielle Statistik für das Bundesamt für Landwirtschaft zu erstellen.</p>
+<p>Diese Webseite dient als Pilot und zielt nicht darauf ab, eine offizielle Statistik für das Bundesamt für Landwirtschaft zu erstellen.</p>
 </div>
 </div>
 <p>Die aktuellen Milchpreise werden regelmässig vom Bundesamt für Landwirtschaft auf LINDAS hochgeladen. Mithilfe eines SPARQL-Queries werden diese Daten abgefragt, um aktuelle Marktinformationen zu erhalten. Diese Daten dienen der Berechnung des Produzentenanteils am Konsumentenpreis und werden anschliessend in einer interaktiven Grafik visualisiert. Diese Grafiken sind in diese Test-Webseite eingebettet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
@@ -97,22 +97,6 @@ Hinweis
 <p>Der Produzentenanteil am Konsumentenfranken <span class="math inline">\(R(t)\)</span> für Milch wird wie folgt berechnet. <span class="math display">\[
 R(t) = 100\% \frac{P_p(t)}{P_c(t)}
 \]</span> wobei <span class="math inline">\(P_p(t)\)</span> der Produzentenpreis zum Zeitpunkt <span class="math inline">\(t\)</span> ist und <span class="math inline">\(P_c(t)\)</span> der Konsumentenpreis zum Zeitpunkt <span class="math inline">\(t\)</span>. Dieser <em>rohe</em> Produzentenanteil wurde mithilfe einer saisonalen Zerlegung von Zeitreihen mit Loess (Locally Estimated Scatterplot Smoothing) in Trend, saisonale Effekte und kurzzeitige Fluktuationen zerlegt. Diese Methode ist in der R Funktion <code>stl</code> implementiert.</p>
-<hr>
-<section id="was-kann-datawrapper-sonst" class="level1 page-columns page-full">
-<h1>Was kann Datawrapper sonst?</h1>
-<p>Datawrapper kann einiges mehr als nur Zeitreihen als Linien zeichnen. Das folgende Beispiel ist aus einem <a href="https://www.atlas.bfs.admin.ch/maps/13/de/17965_5882_5872_4801/27738.html">Datensatz des Bundesamtes für Statistik BFS</a> generiert.</p>
-<div style="min-height:764px"><script type="text/javascript" defer="" src="https://datawrapper.dwcdn.net/rG8gr/embed.js?v=1" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/rG8gr/full.png" alt=""></noscript></div>
-<hr style="visibility:hidden;">
-<p>Die Daten zeigen die Verteilung der landwirtschaftlichen Nutzflächen pro Kanton als horizontales Säulendiagramm. Diese Art von Diagramm ähnelt stark einer Tabelle: Sie lässt sich gut lesen, darunter liegende Muster sind aber nur schwer feststellbar.</p>
-<p>Ein Streudiagramm ist dafür möglicherweise angebrachter. Mit Datawrapper lassen sich auch solche erstellen, inklusive generierter Trendlinie.</p>
-<div style="min-height:477px"><script type="text/javascript" defer="" src="https://datawrapper.dwcdn.net/QksOK/embed.js?v=1" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/QksOK/full.png" alt=""></noscript></div>
-<hr style="visibility:hidden;">
-<p>Allerdings ist möglicherweise auch diese Art von Diagramm nicht die beste für die Daten. Schliesslich handelt es sich um Daten von Kantonen, also geografischen Einheiten. Das schreit dannach, eine Karte zu erstellen. Glücklicherweise kann Datawrapper auch damit umgehen. Das Tool bietet tausende vorgefertigter Karten, welche man durch ein automatisches Matching schnell mit Daten füttern kann.</p>
-<p>Zu Demonstrationszwecken wird hier die durchschnittliche landwirtschaftlich Nutzfläche pro Bezirk (und nicht Kanton) eingespielt. Das ganze funktioniert auch gut, wenn die Grafik vergrössert wird.</p>
-<div class="column-page">
-<div style="min-height:836px"><script type="text/javascript" defer="" src="https://datawrapper.dwcdn.net/OHJZB/embed.js?v=9" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/OHJZB/full.png" alt=""></noscript></div>
-</div>
-</section>
 
 
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Fußnoten</h2>

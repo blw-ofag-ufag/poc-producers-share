@@ -1,13 +1,15 @@
 ---
-title: Testseite für die Einbettung einer Datawrapper-Grafik
-subtitle: Beispiel Produzentenanteil am Konsumentenfranken bei UHT-Milch
+title: |
+  Berechnung des Produzentenanteils am Konsumentenfranken
+subtitle: |
+  Pilotprojekt am Beispiel der konventionellen Molkerei- und UHT-Milch
 author: Damian Oswald
 date: 2024-05-22
 lang: de
 ---
 
 :::{.callout-note}
-Diese Webseite dient als Proof-of-Concept und zielt nicht darauf ab, eine offizielle Statistik für das Bundesamt für Landwirtschaft zu erstellen.
+Diese Webseite dient als Pilot und zielt nicht darauf ab, eine offizielle Statistik für das Bundesamt für Landwirtschaft zu erstellen.
 :::
 
 Die aktuellen Milchpreise werden regelmässig vom Bundesamt für Landwirtschaft auf LINDAS hochgeladen. Mithilfe eines SPARQL-Queries werden diese Daten abgefragt, um aktuelle Marktinformationen zu erhalten. Diese Daten dienen der Berechnung des Produzentenanteils am Konsumentenpreis und werden anschliessend in einer interaktiven Grafik visualisiert. Diese Grafiken sind in diese Test-Webseite eingebettet.[^1]
