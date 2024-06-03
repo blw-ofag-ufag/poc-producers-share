@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Damian Oswald">
 
-<title>Testseite für die Einbettung einer Datawrapper-Grafik</title>
+<title>datawrapper</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,18 +23,17 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="datawrapper_files/libs/clipboard/clipboard.min.js"></script>
+<script src="datawrapper_files/libs/quarto-html/quarto.js"></script>
+<script src="datawrapper_files/libs/quarto-html/popper.min.js"></script>
+<script src="datawrapper_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="datawrapper_files/libs/quarto-html/anchor.min.js"></script>
+<link href="datawrapper_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="datawrapper_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="datawrapper_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="datawrapper_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="datawrapper_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -45,59 +43,8 @@ ul.task-list li input[type="checkbox"] {
 
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Testseite für die Einbettung einer Datawrapper-Grafik</h1>
-<p class="subtitle lead">Beispiel Produzentenanteil am Konsumentenfranken bei UHT-Milch</p>
-</div>
 
 
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Autor:in</div>
-    <div class="quarto-title-meta-contents">
-             <p>Damian Oswald </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">22. Mai 2024</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-</header>
-
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Hinweis
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Diese Webseite dient als Proof-of-Concept und zielt nicht darauf ab, eine offizielle Statistik für das Bundesamt für Landwirtschaft zu erstellen.</p>
-</div>
-</div>
-<p>Die aktuellen Milchpreise werden regelmässig vom Bundesamt für Landwirtschaft auf LINDAS hochgeladen. Mithilfe eines SPARQL-Queries werden diese Daten abgefragt, um aktuelle Marktinformationen zu erhalten. Diese Daten dienen der Berechnung des Produzentenanteils am Konsumentenpreis und werden anschliessend in einer interaktiven Grafik visualisiert. Diese Grafiken sind in diese Test-Webseite eingebettet.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div style="min-height:581px"><script type="text/javascript" defer="" src="https://datawrapper.dwcdn.net/BxLYR/embed.js?v=6" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/BxLYR/full.png" alt=""></noscript></div>
-<hr style="visibility:hidden;">
-<p>Der Produzentenanteil am Konsumentenfranken beschreibt den Anteil des Verkaufspreises eines Produkts – hier von konventioneller Molkereimilch – der direkt an den Produzenten oder Landwirt geht.</p>
-<div style="min-height:554px"><script type="text/javascript" defer="" src="https://datawrapper.dwcdn.net/hdlcx/embed.js?v=13" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/hdlcx/full.png" alt=""></noscript></div>
-<hr style="visibility:hidden;">
-<p>Der Produzentenanteil am Konsumentenfranken <span class="math inline">\(R(t)\)</span> für Milch wird wie folgt berechnet. <span class="math display">\[
-R(t) = 100\% \frac{P_p(t)}{P_c(t)}
-\]</span> wobei <span class="math inline">\(P_p(t)\)</span> der Produzentenpreis zum Zeitpunkt <span class="math inline">\(t\)</span> ist und <span class="math inline">\(P_c(t)\)</span> der Konsumentenpreis zum Zeitpunkt <span class="math inline">\(t\)</span>. Dieser <em>rohe</em> Produzentenanteil wurde mithilfe einer saisonalen Zerlegung von Zeitreihen mit Loess (Locally Estimated Scatterplot Smoothing) in Trend, saisonale Effekte und kurzzeitige Fluktuationen zerlegt. Diese Methode ist in der R Funktion <code>stl</code> implementiert.</p>
-<hr>
 <section id="was-kann-datawrapper-sonst" class="level1 page-columns page-full">
 <h1>Was kann Datawrapper sonst?</h1>
 <p>Datawrapper kann einiges mehr als nur Zeitreihen als Linien zeichnen. Das folgende Beispiel ist aus einem <a href="https://www.atlas.bfs.admin.ch/maps/13/de/17965_5882_5872_4801/27738.html">Datensatz des Bundesamtes für Statistik BFS</a> generiert.</p>
@@ -114,13 +61,7 @@ R(t) = 100\% \frac{P_p(t)}{P_c(t)}
 </div>
 </section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Fußnoten</h2>
-
-<ol>
-<li id="fn1"><p>Die interaktiven Grafiken werden in die Testseite als <em>iframe</em> eingebettet, um die Ergebnisse anschaulich darzustellen. Dies ermöglicht eine dynamische Präsentation der aktuellen Daten, welche sich in allen möglichen Websites einbetten lässt.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main>
+</main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -162,12 +103,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Kopiert");
+    button.setAttribute("title", "Copied!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Kopiert");
+      button.setAttribute("data-bs-title", "Copied!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
