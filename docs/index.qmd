@@ -25,7 +25,7 @@ Die aktuellen Milchpreise werden regelmässig vom Bundesamt für Landwirtschaft 
 Der Produzentenanteil am Konsumentenfranken beschreibt den Anteil des Verkaufspreises eines Produkts -- hier von konventioneller Molkereimilch -- der direkt an den Produzenten oder Landwirt geht.
 
 ```{=html}
-<div style="min-height:554px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/hdlcx/embed.js?v=13" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/hdlcx/full.png" alt="" /></noscript></div></script>
+<div style="min-height:570px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/hdlcx/embed.js?v=19" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/hdlcx/full.png" alt="" /></noscript></div>
 ```
 
 <hr style="visibility:hidden;" />
@@ -35,3 +35,5 @@ $$
 R(t) = 100\% \frac{P_p(t)}{P_c(t)}
 $$
 wobei $P_p(t)$ der Produzentenpreis zum Zeitpunkt $t$ ist und $P_c(t)$ der Konsumentenpreis zum Zeitpunkt $t$. Dieser *rohe* Produzentenanteil wurde mithilfe einer saisonalen Zerlegung von Zeitreihen mit Loess (Locally Estimated Scatterplot Smoothing) in Trend, saisonale Effekte und kurzzeitige Fluktuationen zerlegt. Diese Methode ist in der R Funktion `stl` implementiert.
+
+Die Methoden der Datenerhebung und -bereinigung werden auf der [Agrarmarktdaten-Plattform](https://www.agrarmarktdaten.ch/methoden) ausgeführt.
