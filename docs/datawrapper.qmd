@@ -34,7 +34,7 @@ Der *rohe* Produzentenanteil wurde mithilfe einer saisonalen Zerlegung von Zeitr
 Datawrapper kann einiges mehr als nur Zeitreihen als Linien zeichnen. Das folgende Beispiel ist aus einem [Datensatz des Bundesamtes für Statistik BFS](https://www.atlas.bfs.admin.ch/maps/13/de/17965_5882_5872_4801/27738.html) generiert.
 
 ```{=html}
-<div style="min-height:764px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/rG8gr/embed.js?v=1" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/rG8gr/full.png" alt="" /></noscript></div>
+<div style="min-height:764px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/rG8gr/embed.js" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/rG8gr/full.png" alt="" /></noscript></div>
 ```
 
 <hr style="visibility:hidden;" />
@@ -44,7 +44,7 @@ Die Daten zeigen die Verteilung der landwirtschaftlichen Nutzflächen pro Kanton
 Ein Streudiagramm ist dafür möglicherweise angebrachter. Mit Datawrapper lassen sich auch solche erstellen, inklusive generierter Trendlinie.
 
 ```{=html}
-<div style="min-height:477px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/QksOK/embed.js?v=1" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/QksOK/full.png" alt="" /></noscript></div>
+<div style="min-height:477px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/QksOK/embed.js" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/QksOK/full.png" alt="" /></noscript></div>
 ```
 
 <hr style="visibility:hidden;" />
@@ -55,6 +55,6 @@ Zu Demonstrationszwecken wird hier die durchschnittliche landwirtschaftlich Nutz
 
 :::{.column-page}
 ```{=html}
-<div style="min-height:836px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/OHJZB/embed.js?v=9" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/OHJZB/full.png" alt="" /></noscript></div>
+<div style="min-height:836px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/OHJZB/embed.js" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/OHJZB/full.png" alt="" /></noscript></div>
 ```
 :::
