@@ -1,12 +1,15 @@
 ---
-title: Testseite für die Einbettung einer Datawrapper-Grafik
+title: |
+  Berechnung des Produzentenanteils am Konsumentenfranken
+subtitle: |
+  Pilotprojekt am Beispiel der konventionellen Molkerei- und UHT-Milch
 author: Damian Oswald
-date: 2024-05-22
+date: today
 lang: de
 ---
 
 :::{.callout-note}
-Diese Webseite dient als Proof-of-Concept und zielt nicht darauf ab, eine offizielle Statistik für das Bundesamt für Landwirtschaft zu erstellen.
+Diese Webseite dient als Pilot und zielt nicht darauf ab, eine offizielle Statistik für das Bundesamt für Landwirtschaft zu erstellen.
 :::
 
 Die aktuellen Milchpreise werden regelmässig vom Bundesamt für Landwirtschaft auf LINDAS hochgeladen. Mithilfe eines SPARQL-Queries werden diese Daten abgefragt, um aktuelle Marktinformationen zu erhalten. Diese Daten dienen der Berechnung des Produzentenanteils am Konsumentenpreis und werden anschliessend in einer interaktiven Grafik visualisiert. Diese Grafiken sind in diese Test-Webseite eingebettet.[^1]
@@ -27,7 +30,13 @@ Der Produzentenanteil am Konsumentenfranken beschreibt den Anteil des Verkaufspr
 
 <hr style="visibility:hidden;" />
 
-Der *rohe* Produzentenanteil wurde mithilfe einer saisonalen Zerlegung von Zeitreihen mit Loess (Locally Estimated Scatterplot Smoothing) in Trend, saisonale Effekte und kurzzeitige Fluktuationen zerlegt. Diese Methode ist in der R Funktion `stl` implementiert.
+Der Produzentenanteil am Konsumentenfranken $R(t)$ für Milch wird wie folgt berechnet.
+$$
+R(t) = 100\% \frac{P_p(t)}{P_c(t)}
+$$
+wobei $P_p(t)$ der Produzentenpreis zum Zeitpunkt $t$ ist und $P_c(t)$ der Konsumentenpreis zum Zeitpunkt $t$. Dieser *rohe* Produzentenanteil wurde mithilfe einer saisonalen Zerlegung von Zeitreihen mit Loess (Locally Estimated Scatterplot Smoothing) in Trend, saisonale Effekte und kurzzeitige Fluktuationen zerlegt. Diese Methode ist in der R Funktion `stl` implementiert.
+
+Die Methoden der Datenerhebung und -bereinigung werden auf der [Agrarmarktdaten-Plattform](https://www.agrarmarktdaten.ch/methoden) ausgeführt.
 
 # Was kann Datawrapper sonst?
 

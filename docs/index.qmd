@@ -4,7 +4,7 @@ title: |
 subtitle: |
   Pilotprojekt am Beispiel der konventionellen Molkerei- und UHT-Milch
 author: Damian Oswald
-date: 2024-05-22
+date: today
 lang: de
 ---
 
