@@ -17,7 +17,7 @@ Die aktuellen Milchpreise werden regelmässig vom Bundesamt für Landwirtschaft 
 [^1]: Die interaktiven Grafiken werden in die Testseite als *iframe* eingebettet, um die Ergebnisse anschaulich darzustellen. Dies ermöglicht eine dynamische Präsentation der aktuellen Daten, welche sich in allen möglichen Websites einbetten lässt.
 
 ```{=html}
-<div style="min-height:581px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/BxLYR/embed.js" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/BxLYR/full.png" alt="" /></noscript></div></script>
+<div style="min-height:581px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/BxLYR/embed.js" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/BxLYR/full.png" alt="" /></noscript></div>
 ```
 
 <hr style="visibility:hidden;" />
