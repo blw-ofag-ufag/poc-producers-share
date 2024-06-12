@@ -3,7 +3,19 @@ title: |
   Berechnung des Produzentenanteils am Konsumentenfranken
 subtitle: |
   Pilotprojekt am Beispiel der konventionellen Molkerei- und UHT-Milch
-author: Damian Oswald
+author:
+  - name: Damian Oswald
+    email: damian.oswald@blw.admin.ch
+    affiliations:
+      - name: Bundesamt für Landwirtschaft BLW
+        address: Schwarzenburgstrasse 165
+        city: 3097 Liebefeld
+  - name: Yawo Michel Afangbedji
+    email: michel-yawo.afangbedji@blw.admin.ch
+    affiliations:
+      - name: Bundesamt für Landwirtschaft BLW
+        address: Schwarzenburgstrasse 165
+        city: 3097 Liebefeld
 date: today
 lang: de
 ---
