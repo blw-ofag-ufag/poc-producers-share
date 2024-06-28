@@ -15,6 +15,10 @@ The goal of this project is to develop and test a proof-of-concept (POC) data pi
 2. **Computation:** The script calculates the producer's share of the consumer's price and performs a seasonal decomposition. The results are stored on this public GitHub repository.
 3. **Visualization:** The results are visualized using [Datawrapper](https://www.datawrapper.de/), which generates an interactive chart embedded in an [HTML page](https://blw-ofag-ufag.github.io/poc-producers-share/).
 
+# 📁 The repository structure
+
+This repository is structured as follows: `/docs` contains all files related to generate the [demonstration sites](https://blw-ofag-ufag.github.io/poc-producers-share/) -- both the HTML files as well as the markdown source files. `/resources` contains the SPARQL scripts used, sourced R functions and any other resources needed here. `/results` contains any data written by the R script; i.e., its output.
+
 # 🤖 The tech stack
 
 This project makes use of the following technologies and programming languages.
