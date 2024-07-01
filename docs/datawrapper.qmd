@@ -3,7 +3,6 @@ title: |
   Berechnung des Produzentenanteils am Konsumentenfranken
 subtitle: |
   Pilotprojekt am Beispiel der konventionellen Molkerei- und UHT-Milch
-author: Damian Oswald
 date: today
 lang: de
 ---

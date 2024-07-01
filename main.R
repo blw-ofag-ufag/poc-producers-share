@@ -4,8 +4,8 @@ library(httr)
 # read external functions
 source("resources/sparql.R")
 
-# define the SPARQL query
-data = sparql("resources/query.rq")
+# define the SPARQL query (to run this on a federal computer, set proxy server's address)
+data = sparql("resources/query.rq", proxy = NULL)
 
 # subset the data after 2010
 data = subset(data, subset = year >= 2010)
