@@ -29,7 +29,7 @@ data$producerShare <- 100 * data$producerPrice / data$consumerPrice
 for (i in c("consumerPrice","producerPrice","producerShare")) {
   data[,paste0(i,"Smoothed")] <- data[,i] |>
     ts(start = 2001, frequency = 12) |>
-    stl(s.window = "periodic") |>
+    stl(s.window = 11) |> # s.window is the window size used to estimate the seasonal component. If it's not "periodic", the seasonal component is allowed to change over time
     getElement("time.series") |>
     as.data.frame() |>
     subset(select = "trend")
