@@ -20,6 +20,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -58,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">1. Juli 2024</p>
+      <p class="date">10. Juli 2024</p>
     </div>
   </div>
   
@@ -89,11 +108,16 @@ Hinweis
 <hr style="visibility:hidden;">
 <p>Der Produzentenanteil am Konsumentenfranken <span class="math inline">\(R(t)\)</span> für Milch wird wie folgt berechnet. <span class="math display">\[
 R(t) = 100\% \frac{P_p(t)}{P_c(t)}
-\]</span> wobei <span class="math inline">\(P_p(t)\)</span> der Produzentenpreis zum Zeitpunkt <span class="math inline">\(t\)</span> ist und <span class="math inline">\(P_c(t)\)</span> der Konsumentenpreis zum Zeitpunkt <span class="math inline">\(t\)</span>. Dieser <em>rohe</em> Produzentenanteil wurde mithilfe einer saisonalen Zerlegung von Zeitreihen mit Loess (Locally Estimated Scatterplot Smoothing) in Trend, saisonale Effekte und kurzzeitige Fluktuationen zerlegt. Diese Methode ist in der R Funktion <code>stl</code> implementiert.</p>
+\]</span> wobei <span class="math inline">\(P_p(t)\)</span> der Produzentenpreis zum Zeitpunkt <span class="math inline">\(t\)</span> ist und <span class="math inline">\(P_c(t)\)</span> der Konsumentenpreis zum Zeitpunkt <span class="math inline">\(t\)</span>. Dieser <em>rohe</em> Produzentenanteil wurde mithilfe einer saisonalen Zerlegung von Zeitreihen mit Loess (Locally Estimated Scatterplot Smoothing) in Trend, saisonale Effekte und kurzzeitige Fluktuationen zerlegt <span class="citation" data-cites="cleveland1990stl">(<a href="#ref-cleveland1990stl" role="doc-biblioref">Cleveland u.&nbsp;a. 1990</a>)</span>. Diese Methode ist in der R Funktion <code>stl</code> implementiert.</p>
 <p>Die Methoden der Datenerhebung und -bereinigung werden auf der <a href="https://www.agrarmarktdaten.ch/methoden">Agrarmarktdaten-Plattform</a> ausgeführt.</p>
 
 
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Fußnoten</h2>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Literatur</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-cleveland1990stl" class="csl-entry" role="doc-biblioentry">
+Cleveland, Robert B, William S Cleveland, Jean E McRae, Irma Terpenning, u.&nbsp;a. 1990. <span>„STL: A seasonal-trend decomposition“</span>. <em>J. off. Stat</em> 6 (1): 3–73. <a href="https://www.wessa.net/download/stl.pdf">https://www.wessa.net/download/stl.pdf</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Fußnoten</h2>
 
 <ol>
 <li id="fn1"><p>Die interaktiven Grafiken werden in die Testseite als <em>iframe</em> eingebettet, um die Ergebnisse anschaulich darzustellen. Dies ermöglicht eine dynamische Präsentation der aktuellen Daten, welche sich in allen möglichen Websites einbetten lässt.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>

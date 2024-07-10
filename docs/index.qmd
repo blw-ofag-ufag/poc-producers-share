@@ -5,6 +5,7 @@ subtitle: |
   Pilotprojekt am Beispiel der konventionellen Molkerei- und UHT-Milch
 date: today
 lang: de
+bibliography: references.bib
 ---
 
 :::{.callout-note}
@@ -33,6 +34,6 @@ Der Produzentenanteil am Konsumentenfranken $R(t)$ für Milch wird wie folgt ber
 $$
 R(t) = 100\% \frac{P_p(t)}{P_c(t)}
 $$
-wobei $P_p(t)$ der Produzentenpreis zum Zeitpunkt $t$ ist und $P_c(t)$ der Konsumentenpreis zum Zeitpunkt $t$. Dieser *rohe* Produzentenanteil wurde mithilfe einer saisonalen Zerlegung von Zeitreihen mit Loess (Locally Estimated Scatterplot Smoothing) in Trend, saisonale Effekte und kurzzeitige Fluktuationen zerlegt. Diese Methode ist in der R Funktion `stl` implementiert.
+wobei $P_p(t)$ der Produzentenpreis zum Zeitpunkt $t$ ist und $P_c(t)$ der Konsumentenpreis zum Zeitpunkt $t$. Dieser *rohe* Produzentenanteil wurde mithilfe einer saisonalen Zerlegung von Zeitreihen mit Loess (Locally Estimated Scatterplot Smoothing) in Trend, saisonale Effekte und kurzzeitige Fluktuationen zerlegt [@cleveland1990stl]. Diese Methode ist in der R Funktion `stl` implementiert.
 
 Die Methoden der Datenerhebung und -bereinigung werden auf der [Agrarmarktdaten-Plattform](https://www.agrarmarktdaten.ch/methoden) ausgeführt.
