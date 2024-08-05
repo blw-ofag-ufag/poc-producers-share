@@ -7,6 +7,9 @@ source("resources/sparql.R")
 # define the SPARQL query (to run this on a federal computer, set proxy server's address)
 data = sparql("resources/query.rq", proxy = NULL)
 
+# remove duplicates
+data = unique(data)
+
 # subset the data after 2010
 data = subset(data, subset = year >= 2010)
 

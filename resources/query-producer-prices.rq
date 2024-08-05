@@ -1,19 +1,13 @@
 PREFIX cube: <https://cube.link/>
-PREFIX sh: <http://www.w3.org/ns/shacl#>
-PREFIX schema: <http://schema.org/>
 PREFIX time: <http://www.w3.org/2006/time#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX dimension: <https://agriculture.ld.admin.ch/foag/dimension>
 
 SELECT ?month ?year ?measure
 WHERE {
   GRAPH <https://lindas.admin.ch/foag/agricultural-market-data> {
-    FILTER (?product in ( <https://agriculture.ld.admin.ch/foag/product/142> ) )
-    FILTER (?costComponent in ( <https://agriculture.ld.admin.ch/foag/cost-component/0>,<https://agriculture.ld.admin.ch/foag/cost-component/1> ) )
+    FILTER (?product in ( <https://agriculture.ld.admin.ch/foag/product/243> ) )
     FILTER (?productOrigin in ( <https://agriculture.ld.admin.ch/foag/product-origin/1> ) )
     <https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Production_Price_Month> cube:observationSet ?observationSet .
     ?observationSet cube:observation ?observation .
-    ?observation <https://agriculture.ld.admin.ch/foag/dimension/cost-component> ?costComponent .
     ?observation <https://agriculture.ld.admin.ch/foag/dimension/product> ?product .
     ?observation <https://agriculture.ld.admin.ch/foag/dimension/product-origin> ?productOrigin .
     ?observation <https://agriculture.ld.admin.ch/foag/measure/price> ?measure .
@@ -21,4 +15,4 @@ WHERE {
   }
   ?date time:year ?year.
   ?date time:month ?month.
-} ORDER BY ?year ?month
+}
