@@ -55,7 +55,7 @@ sequenceDiagram
         GitHub->>GitHub: Commit results
         deactivate GitHub
     end
-    loop Every hour
+    opt When chart is loaded
         activate Datawrapper
         Datawrapper->>GitHub: Fetch latest results
         Datawrapper->>Datawrapper: Visualize results
@@ -71,7 +71,7 @@ sequenceDiagram
 6. **Decompose time series:** The R script performs a seasonal decomposition of the time series by LOESS (locally estimated scatterplot smoothing) using the `stl` function from the `stats` package.
 7. **Save results:** The processed results are written as two CSV files (`prices.csv` and `producers-share.csv`) to the `/results` directory.
 8. **Commit results:** GitHub Actions commits the results to the repository. If no changes are detected, no commits are made.
-9. **Fetch latest results:** Datawrapper periodically (every hour) fetches the latest results from a fixed URL in the GitHub repository.
+9. **Fetch latest results:** Whenever a chart is loaded, datawrapper fetches the latest CSV file from GitHub.
 10. **Visualize results:** Datawrapper creates and updates an interactive graphic at a fixed URL, reflecting the latest processed data. A demo of the datawrapper visualizations can be seen [here](https://blw-ofag-ufag.github.io/poc-producers-share/). Note that the Datawrapper visualization is integrated in this webpage as an iframe.
 
 # 🖥️ The GitHub Actions workflow
