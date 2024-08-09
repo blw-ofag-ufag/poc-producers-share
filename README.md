@@ -76,12 +76,15 @@ sequenceDiagram
 
 # 🖥️ The GitHub Actions workflow
 
-The GitHub action is controlled by the yaml file `.github/workflow/compute-producers-share.yml`. The action is scheduled to run every Sunday at midnight UTC.
+The GitHub action is controlled by the yaml file `.github/workflow/compute-producers-share.yml`. The action is scheduled to run every Sunday at midnight UTC, but it can also be trigerred manually.
 
 ```yml
+name: Execute R script
 on:
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: '0 0 * * 0' # This runs the action every Sunday at midnight UTC
+  workflow_dispatch: # This allows the workflow to be triggered manually
+
 jobs:
   compute-producers-share:
     runs-on: ubuntu-latest
