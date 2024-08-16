@@ -42,14 +42,23 @@ Die Methoden der Datenerhebung und -bereinigung werden auf der [Agrarmarktdaten-
 Datawrapper kann einiges mehr als nur Zeitreihen als Linien zeichnen. Das folgende Beispiel ist aus einem [Datensatz des Bundesamtes für Statistik BFS](https://www.atlas.bfs.admin.ch/maps/13/de/17965_5882_5872_4801/27738.html) generiert. Zuallererst nutzen wir Datawrapper, um die gesamte Tabelle graphisch ansprechend darzustellen.
 
 ```{=html}
-<iframe title="Betriebsgrössen, deren Verteilung und Anzahl Betriebe pro Kanton" aria-label="Table" id="datawrapper-chart-FE0SA" src="https://datawrapper.dwcdn.net/FE0SA/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1185" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
-</script>
+<div style="min-height:1185px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/FE0SA/embed.js" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/FE0SA/full.png" alt="" /></noscript></div>
 ```
+
+<hr style="visibility:hidden;" />
 
 Wir könnten dieselben Informationen auch als Balkendiagram darstellen. Wenn wir den Mauszeiger über dieses Diagramm bewegen, passt es sich entsprechend an.
 
 ```{=html}
 <div style="min-height:764px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/rG8gr/embed.js" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/rG8gr/full.png" alt="" /></noscript></div>
+```
+
+<hr style="visibility:hidden;" />
+
+Wenn wir die Daten *weniger* aussagekräftig visualisieren wollen, könnnen wir natürlich jederzeit ein Donut- oder Kuchendiagram verwenden...
+
+```{=html}
+<div style="min-height:815px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/WLDKu/embed.js" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/WLDKu/full.png" alt="" /></noscript></div>
 ```
 
 <hr style="visibility:hidden;" />
