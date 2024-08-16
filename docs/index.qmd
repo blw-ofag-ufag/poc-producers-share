@@ -4,6 +4,7 @@ title: |
 subtitle: |
   Pilotprojekt am Beispiel der konventionellen Molkerei- und UHT-Milch
 date: today
+link-external-icon: true
 lang: de
 bibliography: references.bib
 ---
