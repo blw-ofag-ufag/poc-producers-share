@@ -58,11 +58,15 @@ Wir könnten dieselben Informationen auch als Balkendiagram darstellen. Wenn wir
 
 Wenn wir die Daten *weniger* aussagekräftig visualisieren wollen, könnnen wir natürlich jederzeit ein Donut- oder Kuchendiagram verwenden...
 
+:::{.column-screen-inset-right}
+
 ```{=html}
-<div style="min-height:815px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/WLDKu/embed.js" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/WLDKu/full.png" alt="" /></noscript></div>
+<div style="min-height:1589px" id="datawrapper-vis-P6RPq"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/P6RPq/embed.js" charset="utf-8" data-target="#datawrapper-vis-P6RPq"></script><noscript><img src="https://datawrapper.dwcdn.net/P6RPq/full.png" alt="" /></noscript></div>
 ```
 
 <hr style="visibility:hidden;" />
+
+:::
 
 Die Daten zeigen die Verteilung der landwirtschaftlichen Nutzflächen pro Kanton als horizontales Säulendiagramm. Diese Art von Diagramm ähnelt stark einer Tabelle: Sie lässt sich gut lesen, darunter liegende Muster sind aber nur schwer feststellbar.
 
