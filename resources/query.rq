@@ -1,40 +1,25 @@
-PREFIX cube: <https://cube.link/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX schema: <http://schema.org/>
 PREFIX time: <http://www.w3.org/2006/time#>
-
-SELECT ?year ?month ?producerPrice ?consumerPrice
+PREFIX dimension: <https://agriculture.ld.admin.ch/foag/dimension/>
+PREFIX measure: <https://agriculture.ld.admin.ch/foag/measure/>
+SELECT ?date ?producerPrice ?consumerPrice
 WHERE {
-  {
-    SELECT ?month ?year ?producerPrice
-    WHERE {
-      GRAPH <https://lindas.admin.ch/foag/agricultural-market-data> {
-        FILTER (?product in ( <https://agriculture.ld.admin.ch/foag/product/243> ) )
-        FILTER (?productOrigin in ( <https://agriculture.ld.admin.ch/foag/product-origin/1> ) )
-        <https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Production_Price_Month> cube:observationSet ?observationSet .
-        ?observationSet cube:observation ?observation .
-        ?observation <https://agriculture.ld.admin.ch/foag/dimension/product> ?product .
-        ?observation <https://agriculture.ld.admin.ch/foag/dimension/product-origin> ?productOrigin .
-        ?observation <https://agriculture.ld.admin.ch/foag/measure/price> ?producerPrice .
-        ?observation <https://agriculture.ld.admin.ch/foag/dimension/date> ?date .
-      }
-      ?date time:year ?year.
-      ?date time:month ?month.
-    }
-  }
-  OPTIONAL {
-    SELECT ?consumerPrice ?year ?month
-    WHERE {
-      GRAPH <https://lindas.admin.ch/foag/agricultural-market-data> {
-        FILTER (?product in ( <https://agriculture.ld.admin.ch/foag/product/239> ) ) # Select UHT milk
-        FILTER (?productionSystem in ( <https://agriculture.ld.admin.ch/foag/production-system/3> ) ) # Only select conventional milk
-        <https://agriculture.ld.admin.ch/foag/cube/MilkDairyProducts/Consumption_Price_Month> cube:observationSet ?observationSet .
-        ?observationSet cube:observation ?observation .
-        ?observation <https://agriculture.ld.admin.ch/foag/dimension/product> ?product .
-        ?observation <https://agriculture.ld.admin.ch/foag/dimension/production-system> ?productionSystem .
-        ?observation <https://agriculture.ld.admin.ch/foag/measure/price> ?consumerPrice .
-        ?observation <https://agriculture.ld.admin.ch/foag/dimension/date> ?date .
-      }
-      ?date time:year ?year.
-      ?date time:month ?month.
-    }
-  }
+  ?consumerPriceObservation dimension:product/schema:name "Vollmilch UHT"@de ;
+    dimension:production-system/schema:name "Konventionell"@de ;
+    dimension:value-chain/schema:name "Konsum"@de ;
+    measure:price ?consumerPrice ;
+    dimension:date ?period .
+  ?producerPriceObservation dimension:product/schema:name "Molkereimilch (konv.)"@de ;
+    dimension:production-system/schema:name "Konventionell"@de ;
+    dimension:value-chain/schema:name "Produktion"@de ;
+    dimension:product-origin/schema:name "Schweiz"@de ;
+    measure:price ?producerPriceRaw ;
+    dimension:date ?period .
+  ?period time:hasBeginning/time:inXSDDateTimeStamp ?dateTime ;
+    time:hasDurationDescription/schema:name "1 month"@en .
+  BIND( xsd:date( ?dateTime ) AS ?date )
+  BIND( ?producerPriceRaw * 0.01 * 1.03 AS ?producerPrice) # convert units for the producer price from 0.01 CHF/kg to 0.01 CHF/L
+  FILTER ( ?date > "2010-12-31"^^xsd:date )
 }
+ORDER BY ?date

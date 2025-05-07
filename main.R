@@ -1,29 +1,21 @@
 # attach libraries to search path
 library(httr)
 
-# read external functions
-source("resources/sparql.R")
+# define sparql query
+sparql <- readLines("resources/query.rq") |>
+  paste(collapse = "\n")
 
-# define the SPARQL query (to run this on a federal computer, set proxy server's address)
-data = sparql("resources/query.rq", proxy = NULL)
+# make the http request
+query <- POST("https://ld.admin.ch/query",
+              add_headers("Accept" = "text/csv"),
+              content_type("application/x-www-form-urlencoded; charset=UTF-8"),
+              body = paste("query=", sparql, sep = ""))
 
-# remove duplicates
-data = unique(data)
+# parse the result
+data <- content(query, encoding = "UTF-8")
 
-# subset the data after 2010
-data = subset(data, subset = year >= 2010)
-
-# convert units for the producer price from 0.01 CHF/kg to 0.01 CHF/L
-data$producerPrice <- data$producerPrice * 1.03
-
-# convert `producerPrice` unit
-data$producerPrice = data$producerPrice * 0.01
-
-# create a new variabel of `Date` type
-data$date <- as.Date(paste(data$year, data$month, "1", sep = "-"))
-
-# sort data by `date`
-data <- data[order(data$date),]
+# convert to data frame
+data <- as.data.frame(data)
 
 # compute the producer's share
 data$producerShare <- 100 * data$producerPrice / data$consumerPrice
