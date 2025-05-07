@@ -17,6 +17,9 @@ data <- content(query, encoding = "UTF-8")
 # convert to data frame
 data <- as.data.frame(data)
 
+# convert to data frame date type
+data$date <- as.Date(data$date)
+
 # compute the producer's share
 data$producerShare <- 100 * data$producerPrice / data$consumerPrice
 
