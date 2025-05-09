@@ -20,6 +20,6 @@ WHERE {
     time:hasDurationDescription/schema:name "1 month"@en .
   BIND( xsd:date( ?dateTime ) AS ?date )
   BIND( ?producerPriceRaw * 0.01 * 1.03 AS ?producerPrice) # convert units for the producer price from 0.01 CHF/kg to 0.01 CHF/L
-  FILTER ( ?date > "2010-12-31"^^xsd:date )
+  FILTER ( ?date >= "2010-01-01"^^xsd:date )
 }
 ORDER BY ?date
