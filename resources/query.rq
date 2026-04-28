@@ -3,7 +3,7 @@ PREFIX schema: <http://schema.org/>
 PREFIX time: <http://www.w3.org/2006/time#>
 PREFIX dimension: <https://agriculture.ld.admin.ch/foag/dimension/>
 PREFIX measure: <https://agriculture.ld.admin.ch/foag/measure/>
-SELECT ?date ?producerPrice ?consumerPrice
+SELECT ?dateTime ?producerPrice ?consumerPrice
 WHERE {
   ?consumerPriceObservation dimension:product/schema:name "Vollmilch UHT"@de ;
     dimension:production-system/schema:name "Konventionell"@de ;
@@ -18,8 +18,7 @@ WHERE {
     dimension:date ?period .
   ?period time:hasBeginning/time:inXSDDateTimeStamp ?dateTime ;
     time:hasDurationDescription/schema:name "1 month"@en .
-  BIND( xsd:date( ?dateTime ) AS ?date )
   BIND( ?producerPriceRaw * 0.01 * 1.03 AS ?producerPrice) # convert units for the producer price from 0.01 CHF/kg to 0.01 CHF/L
   FILTER ( ?dateTime >= "2010-01-01T00:00:00Z"^^xsd:dateTime )
 }
-ORDER BY ?date
+ORDER BY ?dateTime
